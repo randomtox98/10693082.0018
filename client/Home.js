@@ -7,71 +7,6 @@ import 'react-images-uploader/font.css';
 
 import {HTTP_SERVER_PORT_IMAGES} from '../server/constants';
 
-let idx = 0;
-
-/*
-class Card extends React.Component {
-    render() {
-        return (
-            <div className='card'>
-                <span className="classDel" onClick={(e) => this.props.delete(this.props.person.id)}>&times;</span>
-                <img src={this.props.city.picture} alt="Avatar"/>
-                <div>
-                    <h4><b>{this.props.city.name} {this.props.city.location} <small>{this.props.city.id}</small></b></h4>
-                    <p>{this.props.person.score} Points</p>
-                    <div className="colored" style={{backgroundColor: this.props.city.color}}></div>
-                </div>
-            </div>
-        )
-    }
-}
-
-
-class Root extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            cities: [
-                {
-                    id: idx++,
-                    name: "Rennes",
-                    location: "France",
-                    picture: 'imgs/city1.jpg'
-                },
-                {
-                    id: idx++,
-                    name: "Cork",
-                    location: "Ireland",
-                    picture: 'imgs/city2.jpg'
-                },
-                {
-                    id: idx++,
-                    name: "Poznan",
-                    location: "Poland",
-                    picture: 'imgs/city3.jpg'
-                }
-            ],
-        };
-    }
-
-    render() {
-
-        const tab = this.state.cities
-            .filter(p => p.score > this.state.minScoreForDisplay)
-            .map(p => <Card delete={this.deletePerson} key={p.id} person={p}/>)
-        return (
-            <div>
-                <p>Min score:<input id="score" type="number" onChange={(e) => this.updateMinScoreForDisplay()}/></p>
-                {tab}
-                <p>Adding person: </p>
-                <form>
-                    <input type="text"/>
-                </form>
-            </div>
-        )
-    }
-}
-*/
 class CityLaconic extends React.Component {
     render() {
         return (
@@ -118,9 +53,3 @@ export default class Home extends React.Component {
         );
     }
 }
-
-
-
-
-
-
