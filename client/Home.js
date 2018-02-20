@@ -24,17 +24,21 @@ export default class Home extends React.Component {
         this.state = {
             cities: []
         }
-        this.loadData();
+
     };
 
 
     loadData() {
-        fetch('/cities')                       // Ask the route /cities to the server
+        fetch('/api/cities')                       // Ask the route /cities to the server
             .then(res => res.json())                       // Retrieve the objects  in json
             .then(data => this.setState({cities: data}))   // Modify the state accordingly
             .catch(err => console.log(err));               // Bad news: an error!
     }
 
+
+    componentDidMount() {
+        this.loadData();
+    }
 
     render() {
         const tab = this.state.cities.map(p => <CityLaconic cities={p}/>)
