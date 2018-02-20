@@ -26,30 +26,31 @@ app.post('/images', imagesUpload(
 ));
 
 //routes
-app.get('/cities', function (req, res) {
+app.get('/api/cities', function (req, res) {
   db.collection('cities').find().toArray()
      .then(cities => res.json(cities))
      .catch(error => {
          res.status(500).json({message: `Internal Server Error : ${error}`});
      });
 })
-app.get('/city/:id', function (req, res) {
-  db.collection('cities').findOne({'_id':ObjectID(req.params.id)}).toArray(function (err, result) {
-    if (err) throw res.status(400).send(err)
+app.get('/api/city/:id', function (req, res) {
+  db.collection('cities').findOne({'_id':ObjectID(req.params.id)}, function(error, result) {
+    if (error)
+      res.status(400).send(error)
     if (result.length == 0){
       res.status(404)
     }
     res.send(result);
   })
 })
-app.get('/activities', function (req, res) {
+app.get('/api/activities', function (req, res) {
   db.collection('activities').find().toArray()
      .then(cities => res.json(cities))
      .catch(error => {
          res.status(500).json({message: `Internal Server Error : ${error}`});
      });
 })
-app.get('/activity/:id', function (req, res) {
+app.get('/api/activity/:id', function (req, res) {
   db.collection('activities').findOne({'_id':ObjectID(req.params.id)}, function(error, result) {
     if (error)
        res.status(500).json({message: `Internal Server Error : ${error}`});
@@ -57,9 +58,34 @@ app.get('/activity/:id', function (req, res) {
        res.send(result);
     else
        res.status(404);
+     });
+})
+//adding things
+app.post('/api/cities/add', (req, res) => {
+    db.collection('cities').insertOne(req.body, (error, result) => {
+        if (error)
+            res.status(500).json({message: `Internal Server Error : ${error}`});
+        else
+            res.status(200).json({message: `Success`});
+    });
 });
-})
+app.post('/api/activities/add', (req, res) => {
+    db.collection('activities').insertOne(req.body, (error, result) => {
+        if (error)
+            res.status(500).json({message: `Internal Server Error : ${error}`});
+        else
+            res.status(200).json({message: `Success`});
+    });
+});
+// activity_id needed!!
+app.post('/api/comments/add', (req, res) => {
+  res.status(200).json(req.body);
 
-app.post('/', function (req, res) {
-  res.send('Got a POST request')
-})
+  /*
+    db.collection('comments').insertOne(req.body, (error, result) => {
+        if (error)
+            res.status(500).json({message: `Internal Server Error : ${error}`});
+        else
+            res.status(200).json({message: `Success`});
+    });*/
+});
