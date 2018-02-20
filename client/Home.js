@@ -12,7 +12,7 @@ class CityLaconic extends React.Component {
         return (
             <div className='card'>
                 <img src={this.props.cities.picture}/>
-                <p>{this.props.cities.name}</p>
+                <Link to={`/city/${this.props.cities._id}`} activeClassName="active">{this.props.cities.name}</Link>
             </div>
         )
     }
