@@ -25,3 +25,43 @@ app.post('/images', imagesUpload(
     HTTP_SERVER_PORT_IMAGES
 ));
 
+//routes
+app.get('/cities', function (req, res) {
+  db.collection('cities').find().toArray()
+     .then(cities => res.json(cities))
+     .catch(error => {
+         console.log(error);
+         res.status(500).json({message: `Internal Server Error : ${error}`});
+     });
+})
+app.get('/city/:id', function (req, res) {
+  db.collection('cities').findOne({'_id':ObjectID(req.params.id)}).toArray(function (err, result) {
+    if (err) throw res.status(400).send(err)
+    if (result.length == 0){
+      res.status(404)
+    }
+    res.send(result);
+  })
+})
+app.get('/activities', function (req, res) {
+  db.collection('activities').find().toArray()
+     .then(cities => res.json(cities))
+     .catch(error => {
+         console.log(error);
+         res.status(500).json({message: `Internal Server Error : ${error}`});
+     });
+})
+app.get('/activity/:id', function (req, res) {
+  db.collection('activities').findOne({'_id':ObjectID(req.params.id)}, function(error, result) {
+    if (error)
+       res.status(500).json({message: `Internal Server Error : ${error}`});
+    else if (result)
+       res.send(result);
+    else
+       res.status(404);
+});
+})
+
+app.post('/', function (req, res) {
+  res.send('Got a POST request')
+})
