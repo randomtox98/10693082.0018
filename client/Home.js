@@ -7,7 +7,11 @@ import 'react-images-uploader/font.css';
 
 import {HTTP_SERVER_PORT_IMAGES} from '../server/constants';
 
+let s = 1;
+
 class CityLaconic extends React.Component {
+
+
     render() {
         return (
             <div className='card'>
@@ -43,16 +47,10 @@ export default class Home extends React.Component {
     render() {
         const tab = this.state.cities.map(p => <CityLaconic cities={p}/>)
         return (
-            <div>
-                {tab}
-                <h1>My Cities... The places to be!test</h1>
-                <p> You can find in this website many cities with beautiful places, events (festivals, concerts and so
-                    on).
-                    Please, join us, and you will have the possibilities to participate to this new social network.
-                    <br/>
-
-                    Enjoy!!
-                </p>
+            <div className="content">
+                <div className="allcities">
+                    {tab}
+                </div>
             </div>
         );
     }

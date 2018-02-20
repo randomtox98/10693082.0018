@@ -2,7 +2,55 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-img {
+a {
+    text-decoration: none;
+    color : red;
+}
+
+a:link {
+    text-decoration: none;
+    color : black;
+}
+
+.navigation {
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+nav li {
+    display: inline-block;
+    border : solid 1px red;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.menuobj {
+    width: 200px;
+}
+
+.form {
+    width: 300px;
+}
+
+.card img, .city img {
     width: 500px;
     height : 400px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.allcities {
+    text-align: center;
+    border: 1px solid blue;
+    width: 1500px;
+    display: flex;
+    justify-content: space-between;
 }
