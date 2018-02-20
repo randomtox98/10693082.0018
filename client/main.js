@@ -4,6 +4,7 @@ import {Router, Route, hashHistory} from 'react-router';
 
 import Home from './Home.js';
 
+
 ReactDOM.render(
     <div>
         <header>Navbar</header>

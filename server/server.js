@@ -30,7 +30,6 @@ app.get('/cities', function (req, res) {
   db.collection('cities').find().toArray()
      .then(cities => res.json(cities))
      .catch(error => {
-         console.log(error);
          res.status(500).json({message: `Internal Server Error : ${error}`});
      });
 })
@@ -47,7 +46,6 @@ app.get('/activities', function (req, res) {
   db.collection('activities').find().toArray()
      .then(cities => res.json(cities))
      .catch(error => {
-         console.log(error);
          res.status(500).json({message: `Internal Server Error : ${error}`});
      });
 })
