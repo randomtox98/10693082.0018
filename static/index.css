@@ -1,5 +1,10 @@
 * {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Keep Calm Medium", Helvetica, Arial, sans-serif;
+}
+
+body {
+    position: relative;
+    padding-bottom: 50px;
 }
 
 a {
@@ -24,17 +29,47 @@ nav ul {
 
 nav li {
     display: inline-block;
-    border : solid 1px red;
     text-align: center;
     text-transform: uppercase;
 }
 
+.bordermenu {
+    border: solid 1px #ebebeb;
+    border-radius: 5px;
+    color: #7f7f7f;
+}
+
+/*nav a {
+    border: solid 1px #ebebeb;
+    border-radius: 5px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 18px;
+    padding-right: 18px;
+    color: #7f7f7f;
+}*/
+
 .menuobj {
     width: 200px;
+    padding-top: 15px;
 }
+
+#signin {
+    border: solid 1px #ebebeb;
+    border-radius: 7px;
+}
+
+#backgroundbutton {
+    background-color: #ffb623;
+    color: #ffffff;
+    border: solid 1px #ebebeb;
+    border-radius: 7px;
+}
+
 
 .form {
     width: 300px;
+    padding-top: 15px;
 }
 
 .card img, .city img {
@@ -53,4 +88,39 @@ nav li {
     width: 1500px;
     display: flex;
     justify-content: space-between;
+}
+
+#footer{
+    background-color:black;
+    position: absolute;
+    width:100%;
+    bottom: 0;
+    height: 40px;
+    display: flex;
+}
+
+#copyright {
+    text-align: center;
+    color: #ffffff;
+    font-family: Calibri, Arial, Verdana, sans-serif;
+    margin: auto;
+}
+
+input[type=text] {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border: 1px solid #ebebeb;
+}
+
+input[type=submit] {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: #ffffff;
+    background-color: #ffb623;
+    border: 1px solid #ebebeb;
+}
+
+#bar {
+    width: 100%;
+    margin-bottom: 30px;
 }

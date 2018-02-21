@@ -7,24 +7,24 @@ import City from './City.js';
 import Activity from './Activity.js';
 import Modal from './Modal.js';
 
-
 ReactDOM.render(
     <div>
         <header>
             <nav className="navigation">
                 <ul>
-                    <li className="menuobj"><p><img src="/images/siteres/logo.png"/></p></li>
-                    <li className="menuobj"><a href="/">Home</a></li>
-                    <li className="menuobj"><a href="/">Add a city</a></li>
+                    <li className="menuobj"><a href="/"><p><img src="/images/siteres/logo.png" width="150"/></p></a></li>
+ 
+                    <li className="menuobj"><a className="bordermenu" href="/">Add a city</a></li>
                     <li className="form"><form method="post" action="traitement.php">
                         <input type="text" placeholder="Search"/>
                         <input type="submit" value="Go" />
                     </form></li>
-                    <li className="menuobj"><a href="/">Sign In</a></li>
-                    <li className="menuobj"><a href="/">Log In</a></li>
+                    <li className="menuobj"><a className="bordermenu" id="signin" href="/">Sign In</a></li>
+                    <li className="menuobj"><a className="bordermenu" id="backgroundbutton" href="/">Log In</a></li>
                 </ul>
+                <div><img id="bar" src="/images/siteres/bar.png"/></div>
             </nav>
-
+ 
         </header>
         <Router history={hashHistory}>
             <Route path="/" component={Home}/>
@@ -37,6 +37,7 @@ ReactDOM.render(
     ,
     document.getElementById('root')
 );
-
+ 
 if (module.hot)
     module.hot.accept();
+
