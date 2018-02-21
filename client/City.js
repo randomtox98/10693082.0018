@@ -50,13 +50,13 @@ export default class City extends React.Component {
         else {
             return (
                 <div className='city'>
-                    <img src={this.state.city.picture}/>
-                    <p>{this.state.city.name}</p>
-                    <p>{this.state.city.description}</p>
-                    <h1> Places </h1>
-                    {this.state.city.activities.filter(a => a.nature=='place').map((a,i) => <Activ activity={a}/> )}
-                    <h1> Events </h1>
-                    {this.state.city.activities.filter(a => a.nature=='event').map((a,i) => <Activ activity={a}/> )}
+                    <h1>{this.state.city.name}</h1>
+                    <p><img src={this.state.city.picture}/></p>
+                    <div className="citydesc"><p>{this.state.city.description}</p></div>
+                    <div className="cityplaces"><h1> Places </h1><div className="eventtoplace">
+                        {this.state.city.activities.filter(a => a.nature=='place').map((a,i) => <Activ activity={a}/> )}</div></div>
+                    <div className="cityevents"><h1> Events </h1><div className="eventtoplace">
+                        {this.state.city.activities.filter(a => a.nature=='event').map((a,i) => <Activ activity={a}/> )}</div></div>
                 </div>
 
             )

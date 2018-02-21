@@ -56,7 +56,13 @@ nav li {
     border: 1px solid blue;
     width: 80%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin: 10px;
+    width: 500px;
 }
 
 .menuobjlogo {
@@ -79,9 +85,13 @@ nav li {
     background-color: #ffb623;
 }
 
-.card img, .city img {
+.card img {
+    width: 100%;
+}
+
+.city img {
     width: 500px;
-    height: 400px;
+    height: 100%;
 }
 
 #footer {
@@ -185,26 +195,6 @@ input[type=submit] {
     overflow: hidden;
 }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-}
-
-.image {
-    width: 100%;
-    height: 100%;
-}
-
-.image img {
-    width: 100%;
-    height: 100%;
-}
-
 /* Contents */
 .content {
     width: 100%;
@@ -214,11 +204,14 @@ input[type=submit] {
 }
 
 .content-txt {
-    width: 400px;
-    height: 150px;
-    float: left;
+    background-color: white;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    float: right;
     position: relative;
-    top: 300px;
+    display: flex;
+    flex-direction: column;
     -webkit-animation: content-s 7.5s infinite;
     -moz-animation: content-s 7.5s infinite;
     animation: content-s 7.5s infinite;
@@ -226,26 +219,25 @@ input[type=submit] {
 }
 
 .content-txt h1 {
+    width: 100%;
     text-transform: uppercase;
     font-size: 15px;
     color: #fff;
     text-align: center;
-    margin-left: 30px;
-    background-color: white;
     height: 50px;
+    margin-top: auto;
 }
 
 .content h2 {
-    width: 500px;
-    position: absolute;
-    bottom: 150px;
-    left: 850px;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
     font-weight: normal;
     font-size: 20px;
     color: black;
-    text-align: left;
-    margin-left: 30px;
-    z-index: 1;
+    text-align: justify;
+    margin-bottom: auto;
+    text-align: center;
 }
 
 /* Switch */
@@ -277,7 +269,7 @@ input[type=submit] {
 }
 
 .carim {
-    height: 500px;
+    width: 50%;
 }
 
 /* Animation */
@@ -364,73 +356,7 @@ input[type=submit] {
 
 @-webkit-keyframes content-s {
     0% {
-        left: -420px;
-    }
-    10% {
-        left: 0px;
-    }
-    30% {
-        left: 0px;
-    }
-    40% {
-        left: 0px;
-    }
-    50% {
-        left: 0px;
-    }
-    60% {
-        left: 0px;
-    }
-    70% {
-        left: 0;
-    }
-    80% {
-        left: -420px;
-    }
-    90% {
-        left: -420px;
-    }
-    100% {
-        left: -420px;
-    }
-}
-
-@-moz-keyframes content-s {
-    0% {
-        left: -420px;
-    }
-    10% {
-        left: 0px;
-    }
-    30% {
-        left: 0px;
-    }
-    40% {
-        left: 0px;
-    }
-    50% {
-        left: 0px;
-    }
-    60% {
-        left: 0px;
-    }
-    70% {
-        left: 0;
-    }
-    80% {
-        left: -420px;
-    }
-    90% {
-        left: -420px;
-    }
-    100% {
-        left: -420px;
-    }
-}
-
-@keyframes content-s {
-    0% {
-        left: -420px;
+        left: -820px;
     }
     10% {
         left: 20px;
@@ -451,16 +377,88 @@ input[type=submit] {
         left: 0px;
     }
     70% {
-        left: 0;
+        left: 0px;
     }
     80% {
-        left: -420px;
+        left: -1600px;
     }
     90% {
-        left: -420px;
+        left: -1600px;
     }
     100% {
-        left: -420px;
+        left: -1600px;
+    }
+}
+
+@-moz-keyframes content-s {
+    0% {
+        left: -820px;
+    }
+    10% {
+        left: 20px;
+    }
+    15% {
+        left: 0px;
+    }
+    30% {
+        left: 0px;
+    }
+    40% {
+        left: 0px;
+    }
+    50% {
+        left: 0px;
+    }
+    60% {
+        left: 0px;
+    }
+    70% {
+        left: 0px;
+    }
+    80% {
+        left: -1600px;
+    }
+    90% {
+        left: -1600px;
+    }
+    100% {
+        left: -1600px;
+    }
+}
+
+@keyframes content-s {
+    0% {
+        left: -820px;
+    }
+    10% {
+        left: 20px;
+    }
+    15% {
+        left: 0px;
+    }
+    30% {
+        left: 0px;
+    }
+    40% {
+        left: 0px;
+    }
+    50% {
+        left: 0px;
+    }
+    60% {
+        left: 0px;
+    }
+    70% {
+        left: 0px;
+    }
+    80% {
+        left: -1600px;
+    }
+    90% {
+        left: -1600px;
+    }
+    100% {
+        left: -1600px;
     }
 }
 
@@ -543,4 +541,39 @@ input[type=submit] {
     96% {
         margin-left: 45px;
     }
+}
+
+
+/*city*/
+
+.city {
+    margin: auto;
+    width: 80%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.cityplaces h1 {
+    width: 100%;
+    border: 1px solid blue;
+}
+
+
+.cityplaces {
+    width: 100%;
+}
+
+.eventtoplace {
+    display: flex;
+    width: 100%;
+}
+
+.activities {
+    width:500px;
+}
+
+.activities img{
+    width: 40%;
+    height: 100%;
 }
