@@ -5,14 +5,13 @@ import {Link} from 'react-router';
 import ImagesUploader from 'react-images-uploader';
 import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
-
+import Modal from './Modal.js';
 import {HTTP_SERVER_PORT_IMAGES} from '../server/constants'
 
 
 class Comment extends React.Component{
     render(){
         const d = new Date(this.props.com.date);
-        console.log(d.getFullYear(), d.getDate());
         return(
         <div className='comment'>
             <p>{this.props.com.text}</p>
@@ -36,8 +35,11 @@ export default class Activity extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            activity: void 0
-        }
+            activity: void 0,
+            isOpen:false
+            
+        };
+        this.toggle=this.toggle.bind(this);
     };
 
     loadData() {
@@ -51,6 +53,10 @@ export default class Activity extends React.Component {
 
     componentDidMount() {
         this.loadData();
+    }
+    
+    toggle(){
+        this.setState({isOpen: !this.state.isOpen});
     }
 
 
@@ -66,6 +72,10 @@ export default class Activity extends React.Component {
                     <p>{this.state.activity.name}</p>
                     <p>{this.state.activity.description}</p>
                     {this.state.activity.comments.map((a,i) => <Comment com={a}/> )}
+                    <p><a id="open" onClick={(e)=>this.toggle(e)}>Modaltest</a> </p>
+                    <Modal isOpen={this.state.isOpen} toggle={this.toggle}>
+                            <h1> now close the modal </h1>
+                    </Modal>
                     
                     
                 </div>
