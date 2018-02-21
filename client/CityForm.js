@@ -19,7 +19,9 @@ export default class CityForm extends React.Component {
       coordinates: {
           long: data.get('long'),
           lat: data.get('lat')
-      }
+      },
+      activities:[],
+      picture:this.state.picture
     }
     fetch('/api/cities', {
       method: 'POST',
@@ -28,7 +30,7 @@ export default class CityForm extends React.Component {
        'Content-Type': 'application/json'
      },
       body: ("json", JSON.stringify( city )),
-    }).then(data => console.log(data))
+    }).then(data => alert("Sucess"))
     .catch(error => console.error(error));
 
 }
@@ -46,7 +48,7 @@ export default class CityForm extends React.Component {
         <ImagesUploader
         url={"http://localhost:9090/images"}
         optimisticPreviews={true}
-        multiple={true}
+        multiple={false}
         onLoadEnd={(err, result) =>{
             if (err)
                 console.error(err);

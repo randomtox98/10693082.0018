@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
+import CityForm from './CityForm.js';
 import ImagesUploader from 'react-images-uploader';
 import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
@@ -94,6 +95,7 @@ export default class Home extends React.Component {
                 <div className="allcities">
                     {tab}
                 </div>
+                <CityForm/>
             </div>
         );
     }

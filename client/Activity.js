@@ -2,7 +2,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
-import ImagesUploader from 'react-images-uploader';
+
 import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
 import Modal from './Modal.js';
@@ -29,7 +29,7 @@ class Comment extends React.Component{
             <p>{this.props.com.text}</p>
             <p>{d.getFullYear()} , {d.getMonth()+1},{d.getDate()}</p>
             <p>{this.props.com.user.email}</p>
-        </div>    
+        </div>
         )
     }
 }
@@ -42,7 +42,7 @@ class Pic extends React.Component{
             </div>
         )
     }
-}    
+}
 
 export default class Activity extends React.Component {
     constructor(props) {
@@ -50,7 +50,7 @@ export default class Activity extends React.Component {
         this.state = {
             activity: void 0,
             isOpen:false
-            
+
         };
         this.toggle=this.toggle.bind(this);
     };
@@ -67,7 +67,7 @@ export default class Activity extends React.Component {
     componentDidMount() {
         this.loadData();
     }
-    
+
     toggle(){
         this.setState({isOpen: !this.state.isOpen});
     }
@@ -108,7 +108,6 @@ export default class Activity extends React.Component {
                     </div>
 
                 )
-            
-     } 
-}
 
+     }
+}
