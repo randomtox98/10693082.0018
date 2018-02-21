@@ -128,9 +128,10 @@ input[type=submit] {
 
 #bar {
     width: 100%;
-    height: 200px;
+    height: 140px;
     margin-bottom: 30px;
     background-image: url("/images/siteres/bar.png");
+    background-size: cover;
     position: relative;
     border-top: 3px solid #ffb623;
 }
