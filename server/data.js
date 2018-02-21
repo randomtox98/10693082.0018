@@ -102,7 +102,7 @@ var a0 = {
     "Aix en Provence etait la capitale de la Provence au XVeme siecle : marchands prosperes et notables firent de la ville la Florence provencale que l'on connait aujourd'hui. " +
     "Demeures bourgeoises, placettes fleuries, hotels particuliers, fontaines anciennes, ruelles ombragees... toutes les images de la Provence noble des XVII et XVIII sont rassemblees à Aix. <br />",
     picture: '/images/Aix/aix.jpg',
-    activities: [{``
+    activities: [{
         _id: granet._id,
         name: granet.name,
         nature: granet.nature,
@@ -131,7 +131,7 @@ var a1 = {
     "Aix en Provence etait la capitale de la Provence au XVeme siecle : marchands prosperes et notables firent de la ville la Florence provencale que l'on connait aujourd'hui. " +
     "Demeures bourgeoises, placettes fleuries, hotels particuliers, fontaines anciennes, ruelles ombragees... toutes les images de la Provence noble des XVII et XVIII sont rassemblees à Aix. <br />",
     picture: '/images/Aix/aix.jpg',
-    activities: [{``
+    activities: [{
         _id: granet._id,
         name: granet.name,
         nature: granet.nature,
@@ -160,7 +160,7 @@ var a2 = {
     "Aix en Provence etait la capitale de la Provence au XVeme siecle : marchands prosperes et notables firent de la ville la Florence provencale que l'on connait aujourd'hui. " +
     "Demeures bourgeoises, placettes fleuries, hotels particuliers, fontaines anciennes, ruelles ombragees... toutes les images de la Provence noble des XVII et XVIII sont rassemblees à Aix. <br />",
     picture: '/images/Aix/aix.jpg',
-    activities: [{``
+    activities: [{
         _id: granet._id,
         name: granet.name,
         nature: granet.nature,
@@ -189,7 +189,7 @@ var a3 = {
     "Aix en Provence etait la capitale de la Provence au XVeme siecle : marchands prosperes et notables firent de la ville la Florence provencale que l'on connait aujourd'hui. " +
     "Demeures bourgeoises, placettes fleuries, hotels particuliers, fontaines anciennes, ruelles ombragees... toutes les images de la Provence noble des XVII et XVIII sont rassemblees à Aix. <br />",
     picture: '/images/Aix/aix.jpg',
-    activities: [{``
+    activities: [{
         _id: granet._id,
         name: granet.name,
         nature: granet.nature,
