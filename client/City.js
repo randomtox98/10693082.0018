@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 
+import ActivityForm from './ActivityForm.js';
 import ImagesUploader from 'react-images-uploader';
 import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
@@ -16,35 +17,28 @@ class Activ extends React.Component{
         </div>
         )
     }
-    
-} 
- 
+
+}
+
 
 export default class City extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            city: void 0
+            isLoading: true
         }
     };
-
-    loadData() {
-
-        fetch('/api/city/'+this.props.params.id)                       // Ask the route /cities to the server
-            .then(res => res.json())                       // Retrieve the objects  in json
-            .then(data => this.setState({city: data}))   // Modify the state accordingly
-            .catch(err => console.log(err));               // Bad news: an error!
-
-    }
-
     componentDidMount() {
-        this.loadData();
+        return fetch('/api/city/'+this.props.params.id)                       // Ask the route /cities to the server
+            .then(res => res.json())                       // Retrieve the objects  in json
+            .then(data => this.setState({isLoading: false, city: data}))   // Modify the state accordingly
+            .catch(err => console.log(err));
     }
 
 
     render() {
         let city =  this.state.city;
-        if(city == undefined){
+        if(this.state.isLoading){
             return ( <div>loading</div>)
         }
         else {
@@ -57,6 +51,7 @@ export default class City extends React.Component {
                         {this.state.city.activities.filter(a => a.nature=='place').map((a,i) => <Activ activity={a}/> )}</div></div>
                     <div className="cityevents"><h1> Events </h1><div className="eventtoplace">
                         {this.state.city.activities.filter(a => a.nature=='event').map((a,i) => <Activ activity={a}/> )}</div></div>
+                        <ActivityForm cityId={this.state.city._id}/>
                 </div>
 
             )
