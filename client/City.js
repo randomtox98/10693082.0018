@@ -12,7 +12,7 @@ class Activ extends React.Component{
         return(
         <div className='activities'>
             <img src= {this.props.activity.picture} width="150px" height="150px"/>
-            <p> {this.props.activity.name} </p>
+            <p><Link to={`/activity/${this.props.activity._id}`} activeClassName="active">{this.props.activity.name}</Link></p>
         </div>
         )
     }
@@ -56,7 +56,7 @@ export default class City extends React.Component {
                     <h1> Places </h1>
                     {this.state.city.activities.filter(a => a.nature=='place').map((a,i) => <Activ activity={a}/> )}
                     <h1> Events </h1>
-                    {this.state.city.activities.filter(a => a.nature=='event').map((a,i) => <Activ activity={a}/>)}
+                    {this.state.city.activities.filter(a => a.nature=='event').map((a,i) => <Activ activity={a}/> )}
                 </div>
 
             )
