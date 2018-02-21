@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ImagesUploader from 'react-images-uploader';
 
 export default class CityForm extends React.Component {
   constructor(props) {
@@ -42,7 +43,17 @@ export default class CityForm extends React.Component {
 
         <label htmlFor="lat">Latitude</label>
         <input id="lat" name="lat" type="text" />
-
+        <ImagesUploader
+        url={"http://localhost:9090/images"}
+        optimisticPreviews={true}
+        multiple={true}
+        onLoadEnd={(err, result) =>{
+            if (err)
+                console.error(err);
+            else
+                this.setState({picture: result})
+        }}
+        label="Attach image"/>
         <button>Add city</button>
       </form>
     );

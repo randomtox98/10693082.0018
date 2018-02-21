@@ -36,10 +36,7 @@ MongoClient.connect('mongodb://' + SERVER)
   })
   .catch(error => console.log('ERROR:', error));
 
-app.post('/images', imagesUpload(
-  './static/' + IMAGES,
-  HTTP_SERVER_PORT_IMAGES
-));
+app.post('/images', imagesUpload('./static/upload',HTTP_SERVER_PORT_IMAGES));
 
 //routes
 //
