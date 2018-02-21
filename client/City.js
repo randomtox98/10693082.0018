@@ -11,8 +11,8 @@ class Activ extends React.Component{
     render(){
         return(
         <div className='activities'>
-            <img src= {this.props.activity.picture} width="150px" height="150px"/>
-            <p><Link to={`/activity/${this.props.activity._id}`} activeClassName="active">{this.props.activity.name}</Link></p>
+            <img src= {this.props.activity.picture} width="250px" />
+            <p><Link to={`/activity/${this.props.activity._id}`}>{this.props.activity.name}</Link></p>
         </div>
         )
     }

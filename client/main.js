@@ -11,7 +11,7 @@ ReactDOM.render(
     <div>
         <header>
             <nav className="navigation">
-                <div className="menuobjlogo"> <a href="/"><p><img src="/images/siteres/logo.png" width="150"/></p></a></div>
+                <div className="menuobjlogo"> <a href="/"><p><img src="/images/siteres/logo.png" width="250"/></p></a></div>
                 <ul>
                     <li className="menuobj"><a className="bordermenu" href="/">Add a city</a></li>
                     <li className="form"><form method="post" action="traitement.php">
