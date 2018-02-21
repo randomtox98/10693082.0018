@@ -5,14 +5,7 @@ import {
   MongoClient,
   ObjectID
 } from 'mongodb';
-import {
-  check,
-  validationResult
-} from 'express-validator/check';
-import {
-  matchedData,
-  sanitize
-} from 'express-validator/filter';
+
 import bodyParser from 'body-parser';
 
 import {
