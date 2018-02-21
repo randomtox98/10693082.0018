@@ -22,6 +22,27 @@ class CityLaconic extends React.Component {
     }
 }
 
+class CarouselComponent extends React.Component {
+
+
+    render() {
+        return (
+            <div className="slider">
+                <div className="legend"></div>
+                <div className="content">
+                    <div className="content-txt">
+                        <h1><Link to={`/city/${this.props.cities._id}`} activeClassName="active">{this.props.cities.name}</Link></h1>
+                        <h2></h2>
+                    </div>
+                </div>
+                 <div className="images">
+                     <img className="carim" src={this.props.cities.picture}/>
+                </div>
+            </div>
+        )
+    }
+}
+
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -44,10 +65,42 @@ export default class Home extends React.Component {
         this.loadData();
     }
 
+    deletePerson(idPerson) {
+        const tab = this.state.persons.filter(p => p.id != idPerson);
+        const newState = {persons: tab}
+        this.setState({persons:tab});
+    }
+
     render() {
         const tab = this.state.cities.map(p => <CityLaconic cities={p}/>)
+        const tab2 = this.state.cities.map(s => <CarouselComponent cities={s} />)
         return (
-            <div className="content">
+            /*<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">*/
+
+
+
+            <div className="maincontent">
+                <div id="slider">
+                    <div className="slides">
+                    {tab2}
+                    </div>
+                    <div class="switch">
+                    <ul>
+                        <li>
+                            <div class="on"></div>
+                        </li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+                </div>
                 <div className="allcities">
                     {tab}
                 </div>
