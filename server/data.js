@@ -82,8 +82,8 @@ var festival = {
     likers: [],
     description: "Fort de son succes, le Festival d'Aix accueille un public non seulement local, mais aussi national, et un grand nombre de spectateurs et de journalistes venus du monde entier.",
     url: "http://festival-aix.com/en",
-    dateStart: new Date('2016-6-15'),
-    dateEnd: new Date('2016-7-10')
+    dateStart: new Date('2016'),
+    dateEnd: new Date('2017')
 };
 db.activities.drop();
 db.activities.insert([granet, saintSauveur, festival]);

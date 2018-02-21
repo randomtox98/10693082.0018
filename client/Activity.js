@@ -9,6 +9,18 @@ import Modal from './Modal.js';
 import {HTTP_SERVER_PORT_IMAGES} from '../server/constants'
 
 
+class FormCom extends React.Component{
+    render(){
+        return(
+            <div id="formcom">
+                    <form>
+                    <textarea>type here</textarea>
+                    <button>addcom</button>
+                    </form>
+            </div>
+        )
+    }
+}
 class Comment extends React.Component{
     render(){
         const d = new Date(this.props.com.date);
@@ -16,6 +28,7 @@ class Comment extends React.Component{
         <div className='comment'>
             <p>{this.props.com.text}</p>
             <p>{d.getFullYear()} , {d.getMonth()+1},{d.getDate()}</p>
+            <p>{this.props.com.user.email}</p>
         </div>    
         )
     }
@@ -62,26 +75,40 @@ export default class Activity extends React.Component {
 
     render() {
         let activity =  this.state.activity;
-        if(activity == undefined){
-            return ( <div>loading</div>)
+        console.log(activity);
+        if(activity === undefined){
+                return ( <div>loading</div>)
         }
-        else {
-            return (
-                <div className='activity'>
-                    {this.state.activity.pictures.map((a,i) => <Pic pic={a}/> )}
-                    <p>{this.state.activity.name}</p>
-                    <p>{this.state.activity.description}</p>
-                    {this.state.activity.comments.map((a,i) => <Comment com={a}/> )}
-                    <p><a id="open" onClick={(e)=>this.toggle(e)}>Modaltest</a> </p>
-                    <Modal isOpen={this.state.isOpen} toggle={this.toggle}>
-                            <h1> now close the modal </h1>
-                    </Modal>
-                    
-                    
-                </div>
+        let sd ="";
+        let ed="";
+            if(activity.nature==="event"){
+                    const yearS = new Date(activity.dateStart).getFullYear();
+                    const monthS = new Date(activity.dateStart).getMonth()+1;
+                    const dayS = new Date(activity.dateStart).getDate();
+                    const yearE = new Date(activity.dateEnd).getFullYear();
+                    const monthE = new Date(activity.dateEnd).getMonth()+1;
+                    const dayE = new Date(activity.dateEnd).getDate();
+                    sd="Start Date : " + yearS + " - "+monthS +" - "+dayS;
+                    ed="End Date : " + yearE + " - "+monthE +" - "+dayE;
+                }
+                return (
+                    <div className='activity'>
+                        {this.state.activity.pictures.map((a,i) => <Pic pic={a}/> )}
+                        <p>{sd}</p>
+                        <p>{ed}</p>
+                        <p>{this.state.activity.name}</p>
+                        <p>{this.state.activity.description}</p>
+                        {this.state.activity.comments.map((a,i) => <Comment com={a}/> )}
+                        <p><a id="open" onClick={(e)=>this.toggle(e)}>Modaltest</a> </p>
+                        <Modal isOpen={this.state.isOpen} toggle={this.toggle}>
+                                <FormCom/>
+                        </Modal>
 
-            )
-        }
-    }
+
+                    </div>
+
+                )
+            
+     } 
 }
 
