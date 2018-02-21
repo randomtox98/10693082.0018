@@ -4,7 +4,8 @@ import {Router, Route, hashHistory} from 'react-router';
 
 import Home from './Home.js';
 import City from './City.js';
-import Activity from './Activity.js'
+import Activity from './Activity.js';
+import Modal from './Modal.js';
 
 
 ReactDOM.render(
