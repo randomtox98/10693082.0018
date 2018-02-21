@@ -90,7 +90,7 @@ db.activities.insert([granet, saintSauveur, festival]);
 
 
 // **** cities
-var aix = {
+var a0 = {
     _id: ObjectId(),
     name: 'Aix en Provence',
     coordinates: {
@@ -102,7 +102,7 @@ var aix = {
     "Aix en Provence etait la capitale de la Provence au XVeme siecle : marchands prosperes et notables firent de la ville la Florence provencale que l'on connait aujourd'hui. " +
     "Demeures bourgeoises, placettes fleuries, hotels particuliers, fontaines anciennes, ruelles ombragees... toutes les images de la Provence noble des XVII et XVIII sont rassemblees à Aix. <br />",
     picture: '/images/Aix/aix.jpg',
-    activities: [{
+    activities: [{``
         _id: granet._id,
         name: granet.name,
         nature: granet.nature,
@@ -119,16 +119,92 @@ var aix = {
         picture: festival.pictures[0]
     }]
 };
-var boulogne = {
+var a1 = {
     _id: ObjectId(),
-    name: 'Boulogne sur mer',
+    name: 'Aix en Provence',
     coordinates: {
-        long: "50.7264",
-        lat: "1.6147"
+        long: "43.5263",
+        lat: "5.4454"
     },
-    description: "",
-    picture: '/images/Boulogne/centre.jpg',
-    activities: []
+    description: "Protegee par la Montagne Sainte Victoire qui culmine à  1.011 m, Aix est entouree d'une campagne richement preservee avec d'authentiques bastides provencales entourees de jardins à la francaise. " +
+    "Son nom vient des sources thermales decouvertes à la fondation de la ville en 123 avant JC par les romains. <br />" +
+    "Aix en Provence etait la capitale de la Provence au XVeme siecle : marchands prosperes et notables firent de la ville la Florence provencale que l'on connait aujourd'hui. " +
+    "Demeures bourgeoises, placettes fleuries, hotels particuliers, fontaines anciennes, ruelles ombragees... toutes les images de la Provence noble des XVII et XVIII sont rassemblees à Aix. <br />",
+    picture: '/images/Aix/aix.jpg',
+    activities: [{``
+        _id: granet._id,
+        name: granet.name,
+        nature: granet.nature,
+        picture: granet.pictures[0]
+    }, {
+        _id: saintSauveur._id,
+        name: saintSauveur.name,
+        nature: saintSauveur.nature,
+        picture: saintSauveur.pictures[0]
+    }, {
+        _id: festival._id,
+        name: festival.name,
+        nature: festival.nature,
+        picture: festival.pictures[0]
+    }]
+};
+var a2 = {
+    _id: ObjectId(),
+    name: 'Aix en Provence',
+    coordinates: {
+        long: "43.5263",
+        lat: "5.4454"
+    },
+    description: "Protegee par la Montagne Sainte Victoire qui culmine à  1.011 m, Aix est entouree d'une campagne richement preservee avec d'authentiques bastides provencales entourees de jardins à la francaise. " +
+    "Son nom vient des sources thermales decouvertes à la fondation de la ville en 123 avant JC par les romains. <br />" +
+    "Aix en Provence etait la capitale de la Provence au XVeme siecle : marchands prosperes et notables firent de la ville la Florence provencale que l'on connait aujourd'hui. " +
+    "Demeures bourgeoises, placettes fleuries, hotels particuliers, fontaines anciennes, ruelles ombragees... toutes les images de la Provence noble des XVII et XVIII sont rassemblees à Aix. <br />",
+    picture: '/images/Aix/aix.jpg',
+    activities: [{``
+        _id: granet._id,
+        name: granet.name,
+        nature: granet.nature,
+        picture: granet.pictures[0]
+    }, {
+        _id: saintSauveur._id,
+        name: saintSauveur.name,
+        nature: saintSauveur.nature,
+        picture: saintSauveur.pictures[0]
+    }, {
+        _id: festival._id,
+        name: festival.name,
+        nature: festival.nature,
+        picture: festival.pictures[0]
+    }]
+};
+var a3 = {
+    _id: ObjectId(),
+    name: 'Aix en Provence',
+    coordinates: {
+        long: "43.5263",
+        lat: "5.4454"
+    },
+    description: "Protegee par la Montagne Sainte Victoire qui culmine à  1.011 m, Aix est entouree d'une campagne richement preservee avec d'authentiques bastides provencales entourees de jardins à la francaise. " +
+    "Son nom vient des sources thermales decouvertes à la fondation de la ville en 123 avant JC par les romains. <br />" +
+    "Aix en Provence etait la capitale de la Provence au XVeme siecle : marchands prosperes et notables firent de la ville la Florence provencale que l'on connait aujourd'hui. " +
+    "Demeures bourgeoises, placettes fleuries, hotels particuliers, fontaines anciennes, ruelles ombragees... toutes les images de la Provence noble des XVII et XVIII sont rassemblees à Aix. <br />",
+    picture: '/images/Aix/aix.jpg',
+    activities: [{``
+        _id: granet._id,
+        name: granet.name,
+        nature: granet.nature,
+        picture: granet.pictures[0]
+    }, {
+        _id: saintSauveur._id,
+        name: saintSauveur.name,
+        nature: saintSauveur.nature,
+        picture: saintSauveur.pictures[0]
+    }, {
+        _id: festival._id,
+        name: festival.name,
+        nature: festival.nature,
+        picture: festival.pictures[0]
+    }]
 };
 db.cities.drop();
-db.cities.insert([aix, boulogne]);
+db.cities.insert([a0,a1,a2,a3]);

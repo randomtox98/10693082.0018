@@ -132,9 +132,7 @@ app.post('/api/comments', (req, res) => {
     res.status(500).json(statuses["500"]);
   db.collection(req.body.type).updateOne({
     _id: ObjectID(req.body.parentId)
-  }, {
-    $push: update
-  }).then(res.status(200).json(statuses["200"]))
+  }, {$push: update}).then(res.status(200).json(statuses["200"]))
       .catch(error => {
         res.status(500).json(statuses["500"]);
       });
