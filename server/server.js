@@ -116,7 +116,7 @@ app.get('/api/activity/:id', (req, res) => {
 })
 //comments
 //
-// activity_id needed!!
+// parentId needed!!
 app.post('/api/comments', (req, res) => {
   const update = {
     comments: {
@@ -128,8 +128,10 @@ app.post('/api/comments', (req, res) => {
       text: req.body.text
     }
   }
-  db.collection('activities').updateOne({
-    _id: ObjectID(req.body.activityId)
+  if(req.body.type === undefined)
+    res.status(500).json(statuses["500"]);
+  db.collection(req.body.type).updateOne({
+    _id: ObjectID(req.body.parentId)
   }, {
     $push: update
   }).then(res.status(200).json(statuses["200"]))
