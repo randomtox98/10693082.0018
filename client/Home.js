@@ -32,7 +32,7 @@ class CarouselComponent extends React.Component {
                 <div className="content">
                     <div className="content-txt">
                         <h1><Link to={`/city/${this.props.cities._id}`} activeClassName="active">{this.props.cities.name}</Link></h1>
-                        <h2></h2>
+                        <h2>{this.props.cities.description}</h2>
                     </div>
                 </div>
                  <div className="images">
@@ -90,16 +90,6 @@ export default class Home extends React.Component {
                     <div className="slides">
                     {tab2}
                     </div>
-                    <div class="switch">
-                    <ul>
-                        <li>
-                            <div class="on"></div>
-                        </li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
                 </div>
                 <div className="allcities">
                     {tab}

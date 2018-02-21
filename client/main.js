@@ -31,7 +31,9 @@ ReactDOM.render(
             <Route path="/activity/:id" component={Activity} />
             <Route path="*" component={() => <p>Page Not Found</p>}/>
         </Router>
-        <footer> Footer</footer>
+        <footer id="footer">
+            <p id="copyright">AFTER18 © 2018. All rights Reserved.</p>
+        </footer>
     </div>
     ,
     document.getElementById('root')
