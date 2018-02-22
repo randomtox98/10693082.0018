@@ -6,21 +6,10 @@ import {Link} from 'react-router';
 import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
 import Modal from './Modal.js';
+import CommentForm from './CommentForm.js';
 import {HTTP_SERVER_PORT_IMAGES} from '../server/constants'
 
 
-class FormCom extends React.Component{
-    render(){
-        return(
-            <div id="commentaire">
-                    <form>
-                    <textarea>type here</textarea>
-                    <button id="eventbutton">Share</button>
-                    </form>
-            </div>
-        )
-    }
-}
 class Comment extends React.Component{
     render(){
         const d = new Date(this.props.com.date);
@@ -93,10 +82,8 @@ export default class Activity extends React.Component {
                     </div>
                         <p><a className="buttoncomment" id="open" onClick={(e)=>this.toggle(e)}>Want to add any comment ?</a> </p>
                         <Modal isOpen={this.state.isOpen} toggle={this.toggle}>
-                                <FormCom/>
+                                <CommentForm type="activities" parent={this.state.activity._id}/>
                         </Modal>
-
-
                     </div>
 
                 )
