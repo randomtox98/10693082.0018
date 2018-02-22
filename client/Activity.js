@@ -49,34 +49,24 @@ export default class Activity extends React.Component {
         super(props);
         this.state = {
             activity: void 0,
-            isOpen:false
+            isOpen:false,
+            isLoading:true
 
         };
         this.toggle=this.toggle.bind(this);
     };
-
-    loadData() {
-
-        fetch('/api/activity/'+this.props.params.id)                       // Ask the route /cities to the server
-            .then(res => res.json())                       // Retrieve the objects  in json
-            .then(data => this.setState({activity: data}))   // Modify the state accordingly
-            .catch(err => console.log(err));               // Bad news: an error!
-
-    }
-
     componentDidMount() {
-        this.loadData();
+        return fetch('/api/activity/'+this.props.params.id)                       // Ask the route /cities to the server
+            .then(res => res.json())                       // Retrieve the objects  in json
+            .then(data => this.setState({isLoading: false, activity: data}))   // Modify the state accordingly
+            .catch(err => console.log(err));
     }
-
     toggle(){
         this.setState({isOpen: !this.state.isOpen});
     }
-
-
     render() {
         let activity =  this.state.activity;
-        console.log(activity);
-        if(activity === undefined){
+        if(this.state.isLoading){
                 return ( <div>loading</div>)
         }
         let sd ="";
