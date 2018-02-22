@@ -39,13 +39,17 @@ class SignForm extends React.Component{
 export default class Header extends React.Component{
      constructor(props){
          super(props);
-         this.state={isOpen:false
+         this.state={isOpen1:false,
+              isOpen2:false       
         };
-         this.toggle=this.toggle.bind(this);
+         this.toggle1=this.toggle1.bind(this);
+         this.toggle2=this.toggle2.bind(this);
      };
-    toggle(){
-        this.setState({isOpen: !this.state.isOpen});
-        this.setState({isOpen: !this.state.isOpen});
+    toggle1(){
+        this.setState({isOpen1: !this.state.isOpen1});
+    }
+    toggle2(){
+        this.setState({isOpen2: !this.state.isOpen2});
     }
     render(){
         return(
@@ -57,14 +61,14 @@ export default class Header extends React.Component{
                         <input type="text" placeholder="Search"/>
                         <input type="submit" value="Go" />
                     </form></li>
-                    <li className="menuobj"><a className="bordermenu" id="signin" onClick={(e)=>this.toggle(e)}>Sign In</a></li>
-                    <li className="menuobj" id="backgroundbutton"><a className="bordermenu" onClick={(e)=>this.toggle(e)}>Log In</a></li>
+                    <li className="menuobj"><a className="bordermenu" id="signin" onClick={(e)=>this.toggle1(e)}>Sign In</a></li>
+                    <li className="menuobj" id="backgroundbutton"><a className="bordermenu" onClick={(e)=>this.toggle2(e)}>Log In</a></li>
                 </ul>
                 <div id="bar"><div id="filtre"></div></div>
-                <Modal id="modlog" isOpen={this.state.isOpen} toggle={this.toggle}>
+                <Modal id="modlog" isOpen1={this.state.isOpen1} toggle1={this.toggle1}>
                                 <SignForm/>
                 </Modal>
-                <Modal id="modsign" isOpen={this.state.isOpen} toggle={this.toggle}>
+                <Modal id="modsign" isOpen2={this.state.isOpen2} toggle2={this.toggle2}>
                                 <LogForm/>
                 </Modal>
             </nav>
