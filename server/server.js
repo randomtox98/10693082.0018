@@ -36,10 +36,7 @@ MongoClient.connect('mongodb://' + SERVER)
   })
   .catch(error => console.log('ERROR:', error));
 
-app.post('/images', imagesUpload(
-  './static/' + IMAGES,
-  HTTP_SERVER_PORT_IMAGES
-));
+app.post('/images', imagesUpload('./static/upload',HTTP_SERVER_PORT_IMAGES));
 
 //routes
 //
@@ -132,9 +129,7 @@ app.post('/api/comments', (req, res) => {
     res.status(500).json(statuses["500"]);
   db.collection(req.body.type).updateOne({
     _id: ObjectID(req.body.parentId)
-  }, {
-    $push: update
-  }).then(res.status(200).json(statuses["200"]))
+  }, {$push: update}).then(res.status(200).json(statuses["200"]))
       .catch(error => {
         res.status(500).json(statuses["500"]);
       });

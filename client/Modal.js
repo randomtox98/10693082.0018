@@ -11,7 +11,6 @@ export default class Modal extends React.Component{
          return(<div id="modal">
                     <div>
                         {this.props.children}
-                        <button onClick={(e)=> this.props.toggle(e)}>close</button>
                     </div>
                 </div>
                );
