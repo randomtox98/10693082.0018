@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 
 import ActivityForm from './ActivityForm.js';
+import GMaps from './GMaps.js';
 import ImagesUploader from 'react-images-uploader';
 import 'react-images-uploader/styles.css';
 import 'react-images-uploader/font.css';
@@ -51,12 +52,15 @@ export default class City extends React.Component {
                 <div className='city'>
                     <h1>{this.state.city.name}</h1>
                     <p><img src={this.state.city.picture}/></p>
+
                     <div className="citydesc"><p>{this.state.city.description}</p></div>
                     <div className="cityplaces"><h1> Places </h1><div className="eventtoplace">
                         {this.state.city.activities.filter(a => a.nature=='place').map((a,i) => <Activ activity={a}/> )}</div></div>
                     <div className="cityevents"><h1> Events </h1><div className="eventtoplace">
                         {this.state.city.activities.filter(a => a.nature=='event').map((a,i) => <Activ activity={a}/> )}</div></div>
+                    <div><GMaps width="400" height="300" lat={this.state.city.coordinates.lat} long={this.state.city.coordinates.long} /></div>
                     <div className="addactivity"><ActivityForm callback={this.loadData} cityId={this.state.city._id}/></div>
+
                 </div>
 
             )
