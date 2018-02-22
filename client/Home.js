@@ -96,7 +96,7 @@ export default class Home extends React.Component {
                 <div className="allcities">
                     {tab}
                 </div>
-                <CityForm callback={this.loadData} />
+                <div className="addactivity"><CityForm callback={this.loadData} /></div>
             </div>
         );
     }

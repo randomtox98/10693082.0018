@@ -65,12 +65,12 @@ export default class Header extends React.Component{
                     <li className="menuobj" id="backgroundbutton"><a className="bordermenu" onClick={(e)=>this.toggle2(e)}>Log In</a></li>
                 </ul>
                 <div id="bar"><div id="filtre"></div></div>
-                <Modal id="modlog" isOpen1={this.state.isOpen1} toggle1={this.toggle1}>
+                <div className="modallog"><Modal id="modlog" isOpen1={this.state.isOpen1} toggle1={this.toggle1}>
                                 <SignForm/>
                 </Modal>
                 <Modal id="modsign" isOpen2={this.state.isOpen2} toggle2={this.toggle2}>
                                 <LogForm/>
-                </Modal>
+                </Modal></div>
             </nav>
             
         </header>

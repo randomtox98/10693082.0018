@@ -38,37 +38,41 @@ export default class ActivityForm extends React.Component {
     }
 
     render() {
-        return (
-            <form onSubmit={this.handleSubmit}>
+        return (<form onSubmit={this.handleSubmit}>
                 <h2>Fill the form to add your activity !</h2>
-                <label htmlFor="name">Activity name</label><br/>
-                <input id="name" name="name" type="text"/><br/>
-                <label htmlFor="description">Describe the event here :</label><br/>
-                <textarea id="description" name="description"/><br/>
+                <div className="addformpart">
+                    <label htmlFor="name">Activity name</label><br/>
+                    <input id="name" name="name" type="text"/><br/>
+                    <label htmlFor="description">Describe the event here :</label><br/>
+                    <textarea id="description" name="description"/><br/>
+                </div>
 
-                <label htmlFor="nature">What kind of activity is it ?</label><br/>
-                <select id="nature" name="nature">
-                    <option value="place">Place</option>
-                    <option value="event">Event</option>
-                </select><br/><br/><br/>
-                <label htmlFor="startDate">Starting Date</label><br/>
-                <input id="startDate" name="startDate" type="date"/><br/>
-                <label htmlFor="endDate">Ending Date</label><br/>
-                <input id="endDate" name="endDate" type="date"/><br/>
-                <label htmlFor="imageuploader">Add a picture</label><br/>
-                <ImagesUploader
-                    id="imageuploader"
-                    url={"http://localhost:9090/images"}
-                    optimisticPreviews={true}
-                    multiple={true}
-                    onLoadEnd={(err, result) => {
-                        if (err)
-                            console.error(err);
-                        else
-                            this.setState({pictures: [...this.state.pictures, result]})
-                    }}
+                <div className="addformpart">
+                    <label htmlFor="nature">What kind of activity is it ?</label><br/>
+                    <select id="nature" name="nature">
+                        <option value="place">Place</option>
+                        <option value="event">Event</option>
+                    </select><br/><br/><br/>
+                    <label htmlFor="startDate">Starting Date</label><br/>
+                    <input id="startDate" name="startDate" type="date"/><br/>
+                    <label htmlFor="endDate">Ending Date</label><br/>
+                    <input id="endDate" name="endDate" type="date"/><br/></div>
+
+                <div className="addformpart">
+                    <label htmlFor="imageuploader">Add a picture</label><br/>
+                    <ImagesUploader
+                        id="imageuploader"
+                        url={"http://localhost:9090/images"}
+                        optimisticPreviews={true}
+                        multiple={true}
+                        onLoadEnd={(err, result) => {
+                            if (err)
+                                console.error(err);
+                            else
+                                this.setState({pictures: [...this.state.pictures, result]})
+                        }}
                     />
-                <button>Add an activity</button>
+                    <button>Add an activity</button></div>
             </form>
         );
     }

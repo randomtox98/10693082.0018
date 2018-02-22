@@ -37,30 +37,38 @@ export default class CityForm extends React.Component {
 }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="name">City name</label>
-        <input id="name" name="name" type="text" />
+        <form onSubmit={this.handleSubmit}>
+            <h2>Fill the form to add your city !</h2>
+            <div className="addformpart">
+                <label htmlFor="name">City name</label><br/>
+                <input id="name" name="name" type="text"/><br/>
 
-        <label htmlFor="long">Longitude</label>
-        <input id="long" name="long" type="text" />
+                <label htmlFor="long">Longitude</label><br/>
+                <input id="long" name="long" type="text"/><br/>
 
-        <label htmlFor="lat">Latitude</label>
-        <input id="lat" name="lat" type="text" />
+                <label htmlFor="lat">Latitude</label><br/>
+                <input id="lat" name="lat" type="text"/><br/><br/>
+            </div>
 
-        <textarea id="description" name="description" />
-        <ImagesUploader
-        url={"http://localhost:9090/images"}
-        optimisticPreviews={true}
-        multiple={false}
-        onLoadEnd={(err, result) =>{
-            if (err)
-                console.error(err);
-            else
-                this.setState({picture: result})
-        }}
-        label="Attach image"/>
-        <button>Add city</button>
-      </form>
+            <div className="addformpart">
+                <label htmlFor="description">Describe the city you want to add here :</label><br/>
+                <textarea id="description" name="description"/><br/><br/></div>
+
+            <div className="addformpart">
+                <label htmlFor="imageuploader">Add a picture</label>
+                <ImagesUploader
+                    url={"http://localhost:9090/images"}
+                    optimisticPreviews={true}
+                    multiple={false}
+                    onLoadEnd={(err, result) => {
+                        if (err)
+                            console.error(err);
+                        else
+                            this.setState({picture: result})
+                    }}/>
+
+                <button>Add city</button></div>
+        </form>
     );
   }
 }

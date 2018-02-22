@@ -29,7 +29,7 @@ a:link, a:hover, .mylink:hover {
 }
 
 nav ul {
-    width: 80%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -343,7 +343,7 @@ textarea {
     height: 10px;
     position: absolute;
     bottom: 50px;
-    z-index: 99;
+    z-index: 3;
     left: 30px;
 }
 
@@ -368,13 +368,13 @@ textarea {
 .carim {
     width: 50%;
 }
-/*
-#sliderinside {
 
+#sliderinside {
+/*
     width: 1500px;
-    margin: auto;
+    margin: auto;*/
     overflow: hidden;
-}*/
+}
 
 /* Animation */
 @-webkit-keyframes slide {
@@ -484,13 +484,13 @@ textarea {
         left: 0px;
     }
     80% {
-        left: -1600px;
+        left: -2000px;
     }
     90% {
-        left: -1600px;
+        left: -2000px;
     }
     100% {
-        left: -1600px;
+        left: -2000px;
     }
 }
 
@@ -520,13 +520,13 @@ textarea {
         left: 0px;
     }
     80% {
-        left: -1600px;
+        left: -2000px;
     }
     90% {
-        left: -1600px;
+        left: -2000px;
     }
     100% {
-        left: -1600px;
+        left: -2000px;
     }
 }
 
@@ -556,13 +556,13 @@ textarea {
         left: 0px;
     }
     80% {
-        left: -1600px;
+        left: -2000px;
     }
     90% {
-        left: -1600px;
+        left: -2000px;
     }
     100% {
-        left: -1600px;
+        left: -2000px;
     }
 }
 
@@ -694,11 +694,48 @@ textarea {
 
 /* activity form*/
 
-.addactivity h2{
+.addactivity form h2{
     width: 100%;
 }
 
 .addactivity {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.addactivity form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.addformpart {
+    width: 500px;
     text-align: center;
 
 }
+
+.addactivity form label {
+    font-size: 20px;
+}
+
+
+.addactivity form #description {
+    height: 200px;
+    width: 100%;
+}
+
+.modallog {
+    margin: auto;
+}
+
+#signform, #logform {
+    width: 500px;
+    text-align: justify;
+}
+
+
+
+
+
