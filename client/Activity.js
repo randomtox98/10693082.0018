@@ -12,10 +12,10 @@ import {HTTP_SERVER_PORT_IMAGES} from '../server/constants'
 class FormCom extends React.Component{
     render(){
         return(
-            <div id="formcom">
+            <div id="commentaire">
                     <form>
                     <textarea>type here</textarea>
-                    <button>addcom</button>
+                    <button id="eventbutton">Share</button>
                     </form>
             </div>
         )
@@ -26,9 +26,9 @@ class Comment extends React.Component{
         const d = new Date(this.props.com.date);
         return(
         <div className='comment'>
-            <p>{this.props.com.text}</p>
-            <p>{d.getFullYear()} , {d.getMonth()+1},{d.getDate()}</p>
-            <p>{this.props.com.user.email}</p>
+            <p id="whathesaid">{this.props.com.text}</p>
+            <p id="whenhesaid">{d.getFullYear()} , {d.getMonth()+1},{d.getDate()}</p>
+            <p id="whosaid">{this.props.com.user.email}</p>
         </div>
         )
     }
@@ -88,8 +88,10 @@ export default class Activity extends React.Component {
                         <p>{ed}</p>
                         <p>{this.state.activity.name}</p>
                         <p>{this.state.activity.description}</p>
+                    <div id="containercomment">
                         {this.state.activity.comments.map((a,i) => <Comment com={a}/> )}
-                        <p><a id="open" onClick={(e)=>this.toggle(e)}>Modaltest</a> </p>
+                    </div>
+                        <p><a className="buttoncomment" id="open" onClick={(e)=>this.toggle(e)}>Want to add any comment ?</a> </p>
                         <Modal isOpen={this.state.isOpen} toggle={this.toggle}>
                                 <FormCom/>
                         </Modal>
