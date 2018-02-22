@@ -42,6 +42,8 @@ nav li {
     text-align: center;
     width: 10%;
     height: 50px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .bordermenu {
@@ -140,7 +142,7 @@ nav li {
     width: 250px;
 }
 
-input[type=text] {
+.navigation input[type=text] {
     width: 80%;
     height: 100%;
     border-top-left-radius: 3px;
@@ -151,7 +153,7 @@ input[type=text] {
     text-align: center;
 }
 
-input[type=submit] {
+.navigation input[type=submit] {
     width: 20%;
     height: 100%;
     border-top-right-radius: 3px;
@@ -262,16 +264,6 @@ textarea {
 
 /*slider*/
 
-#slider {
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 200px;
-}
-
 @keyframes load {
     from {
         left: -100%;
@@ -297,6 +289,7 @@ textarea {
     position: relative;
     overflow: hidden;
     margin-top: 50px;
+    margin-bottom: 50px;
     background-color: lightgray;
 }
 
@@ -337,7 +330,7 @@ textarea {
     margin-right: auto;
     margin-left: auto;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 1.2vw;
     color: black;
     text-align: justify;
     margin-bottom: auto;
@@ -375,6 +368,13 @@ textarea {
 .carim {
     width: 50%;
 }
+/*
+#sliderinside {
+
+    width: 1500px;
+    margin: auto;
+    overflow: hidden;
+}*/
 
 /* Animation */
 @-webkit-keyframes slide {
@@ -690,4 +690,15 @@ textarea {
 
 .activities img{
     width: 40%;
+}
+
+/* activity form*/
+
+.addactivity h2{
+    width: 100%;
+}
+
+.addactivity {
+    text-align: center;
+
 }

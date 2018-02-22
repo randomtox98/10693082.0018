@@ -87,7 +87,7 @@ export default class Home extends React.Component {
 
 
             <div className="maincontent">
-                <div id="slider">
+                <div id="sliderinside">
                     <div className="slides">
                     {tab2}
                     </div>

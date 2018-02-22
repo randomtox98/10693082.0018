@@ -132,17 +132,11 @@ var yaouank = {
         text: "I dont get it"
     }],
     likers: [],
-<<<<<<< HEAD
+
     description: "Yaouank is called by his organisator by the biggest fest-noz ( name of party in britain) in the world. It’s a mix between britain’s traditions and modern music  into two week of party . The festival remember to everyone that Yaouank , in breton ( brintain’s language), mean youth",
     url: "http://yaouank.bzh/",
     dateStart: new Date('2016-6-15'),
     dateEnd: new Date('2016-7-10')
-=======
-    description: "Fort de son succes, le Festival d'Aix accueille un public non seulement local, mais aussi national, et un grand nombre de spectateurs et de journalistes venus du monde entier.",
-    url: "http://festival-aix.com/en",
-    dateStart: new Date('2016'),
-    dateEnd: new Date('2017')
->>>>>>> 7ada319c6101b1f56ff201e35d4181d342934573
 };
 var patrick = {
     _id: ObjectId(),
@@ -381,11 +375,7 @@ db.activities.insert([stun, rock, musee, yaouank, patrick, film, jazz, castle, t
 
 
 // **** cities
-<<<<<<< HEAD
 var rennes = {
-=======
-var a0 = {
->>>>>>> 7ada319c6101b1f56ff201e35d4181d342934573
     _id: ObjectId(),
     name: 'Rennes',
     coordinates: {
@@ -416,7 +406,6 @@ var a0 = {
         picture: yaouank.pictures[0]
     }]
 };
-<<<<<<< HEAD
 
 var cork = {
     _id: ObjectId(),
@@ -478,99 +467,40 @@ var poznan = {
         name: malta.name,
         nature: malta.nature,
         picture: malta.pictures[0]
-=======
-var a1 = {
-    _id: ObjectId(),
-    name: 'Aix en Provence',
-    coordinates: {
-        long: "43.5263",
-        lat: "5.4454"
-    },
-    description: "Protegee par la Montagne Sainte Victoire qui culmine à  1.011 m, Aix est entouree d'une campagne richement preservee avec d'authentiques bastides provencales entourees de jardins à la francaise. " +
-    "Son nom vient des sources thermales decouvertes à la fondation de la ville en 123 avant JC par les romains. <br />" +
-    "Aix en Provence etait la capitale de la Provence au XVeme siecle : marchands prosperes et notables firent de la ville la Florence provencale que l'on connait aujourd'hui. " +
-    "Demeures bourgeoises, placettes fleuries, hotels particuliers, fontaines anciennes, ruelles ombragees... toutes les images de la Provence noble des XVII et XVIII sont rassemblees à Aix. <br />",
-    picture: '/images/Aix/aix.jpg',
-    activities: [{
-        _id: granet._id,
-        name: granet.name,
-        nature: granet.nature,
-        picture: granet.pictures[0]
-    }, {
-        _id: saintSauveur._id,
-        name: saintSauveur.name,
-        nature: saintSauveur.nature,
-        picture: saintSauveur.pictures[0]
-    }, {
-        _id: festival._id,
-        name: festival.name,
-        nature: festival.nature,
-        picture: festival.pictures[0]
     }]
 };
-var a2 = {
+
+var poznancopy = {
     _id: ObjectId(),
-    name: 'Aix en Provence',
+    name: 'Poznan',
     coordinates: {
-        long: "43.5263",
-        lat: "5.4454"
+        long: "52.409538",
+        lat: "16.931992"
     },
-    description: "Protegee par la Montagne Sainte Victoire qui culmine à  1.011 m, Aix est entouree d'une campagne richement preservee avec d'authentiques bastides provencales entourees de jardins à la francaise. " +
-    "Son nom vient des sources thermales decouvertes à la fondation de la ville en 123 avant JC par les romains. <br />" +
-    "Aix en Provence etait la capitale de la Provence au XVeme siecle : marchands prosperes et notables firent de la ville la Florence provencale que l'on connait aujourd'hui. " +
-    "Demeures bourgeoises, placettes fleuries, hotels particuliers, fontaines anciennes, ruelles ombragees... toutes les images de la Provence noble des XVII et XVIII sont rassemblees à Aix. <br />",
-    picture: '/images/Aix/aix.jpg',
+    description: "Poznań is among the oldest and largest cities in Poland. The city population is about 550,000. It is the historical capital of the Greater Poland region and is currently the administrative capital of the province called Greater Poland Voivodeship. The name comes directly from the verb poznać, which means to get to know or to recognize, so it may simply mean known town.",
+    picture: '/images/Poznan/poznan2.jpg',
     activities: [{
-        _id: granet._id,
-        name: granet.name,
-        nature: granet.nature,
-        picture: granet.pictures[0]
+        _id: town._id,
+        name: town.name,
+        nature: town.nature,
+        picture: town.pictures[0]
     }, {
-        _id: saintSauveur._id,
-        name: saintSauveur.name,
-        nature: saintSauveur.nature,
-        picture: saintSauveur.pictures[0]
+        _id: king._id,
+        name: king.name,
+        nature: king.nature,
+        picture: king.pictures[0]
     }, {
-        _id: festival._id,
-        name: festival.name,
-        nature: festival.nature,
-        picture: festival.pictures[0]
-    }]
-};
-var a3 = {
-    _id: ObjectId(),
-    name: 'Aix en Provence',
-    coordinates: {
-        long: "43.5263",
-        lat: "5.4454"
-    },
-    description: "Protegee par la Montagne Sainte Victoire qui culmine à  1.011 m, Aix est entouree d'une campagne richement preservee avec d'authentiques bastides provencales entourees de jardins à la francaise. " +
-    "Son nom vient des sources thermales decouvertes à la fondation de la ville en 123 avant JC par les romains. <br />" +
-    "Aix en Provence etait la capitale de la Provence au XVeme siecle : marchands prosperes et notables firent de la ville la Florence provencale que l'on connait aujourd'hui. " +
-    "Demeures bourgeoises, placettes fleuries, hotels particuliers, fontaines anciennes, ruelles ombragees... toutes les images de la Provence noble des XVII et XVIII sont rassemblees à Aix. <br />",
-    picture: '/images/Aix/aix.jpg',
-    activities: [{
-        _id: granet._id,
-        name: granet.name,
-        nature: granet.nature,
-        picture: granet.pictures[0]
+        _id: martin._id,
+        name: martin.name,
+        nature: martin.nature,
+        picture: martin.pictures[0]
     }, {
-        _id: saintSauveur._id,
-        name: saintSauveur.name,
-        nature: saintSauveur.nature,
-        picture: saintSauveur.pictures[0]
-    }, {
-        _id: festival._id,
-        name: festival.name,
-        nature: festival.nature,
-        picture: festival.pictures[0]
->>>>>>> 7ada319c6101b1f56ff201e35d4181d342934573
+        _id: malta._id,
+        name: malta.name,
+        nature: malta.nature,
+        picture: malta.pictures[0]
     }]
 };
 
 db.cities.drop();
-<<<<<<< HEAD
-db.cities.insert([rennes, cork, poznan]);
-=======
-db.cities.insert([a0,a1,a2,a3]);
->>>>>>> 7ada319c6101b1f56ff201e35d4181d342934573
+db.cities.insert([rennes, cork, poznan,poznancopy]);
