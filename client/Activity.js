@@ -27,7 +27,7 @@ class Pic extends React.Component{
     render(){
         return(
             <div className='pic'>
-            <img src= {this.props.pic} width="150px" height="150px"/>
+            <img src= {this.props.pic} width="400px"/>
             </div>
         )
     }
@@ -76,10 +76,12 @@ export default class Activity extends React.Component {
                 }
                 return (
                     <div className='activity'>
-                        {this.state.activity.pictures.map((a,i) => <Pic pic={a}/> )}
+                        <h1>{this.state.activity.name}</h1>
+                        <div className="actipics">
+                            {this.state.activity.pictures.map((a,i) => <Pic pic={a}/> )}
+                        </div>
                         <p>{sd}</p>
                         <p>{ed}</p>
-                        <p>{this.state.activity.name}</p>
                         <p>{this.state.activity.description}</p>
                     <div id="containercomment">
                         {this.state.activity.comments.map((a,i) => <Comment com={a}/> )}

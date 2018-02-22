@@ -232,11 +232,18 @@ textarea {
     height:100px;
 }
 
-.pic {
-    border: 3px red solid;
-    display: inline-block;
-    width: 10%;
-    
+.actipics {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1000px;
+    margin: auto;
+}
+
+.activity h1 {
+    border-bottom: 3px dashed #ffb623;
+    border-top: 3px solid black;
+    margin-bottom: 50px;
 }
 
 /* _______________________________________________________ */
@@ -713,9 +720,7 @@ textarea {
 #signform, #logform {
     width: 500px;
     text-align: justify;
+    margin-bottom: 50px;
 }
-
-
-
 
 
