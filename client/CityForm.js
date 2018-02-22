@@ -31,7 +31,7 @@ export default class CityForm extends React.Component {
        'Content-Type': 'application/json'
      },
       body: ("json", JSON.stringify( city )),
-    }).then(data => alert("Sucess")).then(this.props.callback())
+    }).then(this.props.callback())
     .catch(error => console.error(error));
 
 }

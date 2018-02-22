@@ -32,7 +32,7 @@ export default class ActivityForm extends React.Component {
                 'Content-Type': 'application/json'
             },
             body: ("json", JSON.stringify(activity)),
-        }).then(data => alert("Sucess")).then(this.props.callback())
+        }).then(this.props.callback())
             .catch(error => console.error(error));
 
     }
