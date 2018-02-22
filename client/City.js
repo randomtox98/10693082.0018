@@ -53,7 +53,6 @@ export default class City extends React.Component {
                         {this.state.city.activities.filter(a => a.nature=='place').map((a,i) => <Activ activity={a}/> )}</div></div>
                     <div className="cityevents"><h1> Events </h1><div className="eventtoplace">
                         {this.state.city.activities.filter(a => a.nature=='event').map((a,i) => <Activ activity={a}/> )}</div></div>
-                    <button type="buttonactivity">Click here to add an activity !</button>
                     <div className="addactivity"><ActivityForm cityId={this.state.city._id}/></div>
                 </div>
 

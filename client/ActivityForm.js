@@ -42,10 +42,13 @@ export default class ActivityForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <h2>Fill the form to add your activity !</h2>
+                <div className='osef'>
                 <label htmlFor="name">Activity name</label><br/>
+                
                 <input id="name" name="name" type="text"/><br/>
                 <label htmlFor="description">Describe the event here :</label><br/>
                 <textarea id="description" name="description"/><br/>
+                </div>
 
                 <label htmlFor="nature">What kind of activity is it ?</label><br/>
                 <select id="nature" name="nature">
