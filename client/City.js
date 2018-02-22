@@ -21,20 +21,25 @@ class Activ extends React.Component{
 }
 
 
+
+
 export default class City extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             isLoading: true
         }
+        this.loadData = this.loadData.bind(this);
     };
     componentDidMount() {
-        return fetch('/api/city/'+this.props.params.id)                       // Ask the route /cities to the server
-            .then(res => res.json())                       // Retrieve the objects  in json
-            .then(data => this.setState({isLoading: false, city: data}))   // Modify the state accordingly
-            .catch(err => console.log(err));
+      this.loadData();
     }
-
+    loadData(){
+      fetch('/api/city/'+this.props.params.id)                       // Ask the route /cities to the server
+          .then(res => res.json())                       // Retrieve the objects  in json
+          .then(data => this.setState({isLoading: false, city: data}))   // Modify the state accordingly
+          .catch(err => console.log(err));
+    }
 
     render() {
         let city =  this.state.city;
@@ -51,7 +56,7 @@ export default class City extends React.Component {
                         {this.state.city.activities.filter(a => a.nature=='place').map((a,i) => <Activ activity={a}/> )}</div></div>
                     <div className="cityevents"><h1> Events </h1><div className="eventtoplace">
                         {this.state.city.activities.filter(a => a.nature=='event').map((a,i) => <Activ activity={a}/> )}</div></div>
-                        <ActivityForm cityId={this.state.city._id}/>
+                    <div className="addactivity"><ActivityForm callback={this.loadData} cityId={this.state.city._id}/></div>
                 </div>
 
             )

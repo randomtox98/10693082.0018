@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import CityForm from './CityForm.js';
 
 
 import ImagesUploader from 'react-images-uploader';
@@ -50,7 +51,7 @@ export default class Home extends React.Component {
         this.state = {
             cities: []
         }
-
+        this.loadData = this.loadData.bind(this);
     };
 
 
@@ -87,7 +88,7 @@ export default class Home extends React.Component {
 
 
             <div className="maincontent">
-                <div id="slider">
+                <div id="sliderinside">
                     <div className="slides">
                     {tab2}
                     </div>
@@ -95,7 +96,7 @@ export default class Home extends React.Component {
                 <div className="allcities">
                     {tab}
                 </div>
-                
+                <div className="addactivity"><CityForm callback={this.loadData} /></div>
             </div>
         );
     }

@@ -8,6 +8,10 @@ export default class Modal extends React.Component{
      render(){
          if(this.props.isOpen==false)
              return null;
+         if(this.props.isOpen1==false)
+             return null;
+         if(this.props.isOpen2==false)
+             return null;
          return(<div id="modal">
                     <div>
                         {this.props.children}
@@ -16,3 +20,5 @@ export default class Modal extends React.Component{
                );
      }
  }
+
+                
