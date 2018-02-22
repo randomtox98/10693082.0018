@@ -11,6 +11,7 @@ class LogForm extends React.Component{
                     <input type="text"/>
                     <label>Password</label>
                     <input type="password"/>
+                    <button onClick={(e)=> this.props.toggle(e)}>close</button>
                     </form>
             </div>
         )
@@ -38,8 +39,10 @@ export default class Header extends React.Component{
                         <input type="text" placeholder="Search"/>
                         <input type="submit" value="Go" />
                     </form></li>
-                    <li className="menuobj"><a className="bordermenu" id="signin" href="/">Sign In</a></li>
-                    <li className="menuobj" id="backgroundbutton"><a className="bordermenu" id="backgroundbutton" href="/">Log In</a></li>
+                    <li className="menuobj"><a className="bordermenu" id="signin">Sign In</a></li>
+                    <li className="menuobj" id="backgroundbutton"><a className="bordermenu" onClick={(e)=>this.toggle(e)}>Log In</a><Modal id="modlog" isOpen={this.state.isOpen} toggle={this.toggle}>
+                                <LogForm/>
+                        </Modal></li>
                 </ul>
                 <div id="bar"><div id="filtre"></div></div>
             </nav>
