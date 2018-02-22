@@ -8,15 +8,6 @@ body {
     padding-bottom: 100px;
 }
 
-a, .mylink {
-    color: #ffb623!important;
-}
-
-a:link, a:hover, .mylink:hover {
-    text-decoration: none!important;
-    color: black!important;
-}
-
 
 .maincontent {
     position: relative;
@@ -79,13 +70,11 @@ nav li {
 }
 
 .menuobj:hover {
+    transition: 1s;
     background-color: #ffb623;
+    color: white;
 }
 
-.menuobj a:hover {
-    color: #ffffff;
-    text-decoration: none;
-}
 
 #signin {
     border-radius: 7px;
@@ -93,21 +82,12 @@ nav li {
 
 #backgroundbutton {
     background-color: #ffb623;
+    color: white;
 }
 
-#backgrounbutton a {
-    background-color: white;
-    color: #ffb623;
-}
- 
-#backgroundbutton a:hover {
-    background-color: white;
-    color: #ffb623;
-}
- 
 #backgroundbutton:hover {
     background-color: white;
-    color : #ffb623;
+    color: black;
 }
 
 .card img {
