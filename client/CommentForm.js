@@ -18,7 +18,6 @@ export default class CommentForm extends React.Component {
       type: this.props.type,
       parentId: this.props.parent
     }
-    console.log(comment);
     fetch('/api/comments', {
       method: 'POST',
       headers: {
@@ -26,7 +25,7 @@ export default class CommentForm extends React.Component {
        'Content-Type': 'application/json'
      },
       body: ("json", JSON.stringify( comment )),
-    }).then(data => alert("Sucess"))
+    }).then(data => alert("Sucess")).then(this.props.callback())
     .catch(error => console.error(error));
 
 }

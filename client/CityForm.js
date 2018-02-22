@@ -24,7 +24,6 @@ export default class CityForm extends React.Component {
       picture:this.state.picture,
       description:data.get('description')
     }
-    console.log(city);
     fetch('/api/cities', {
       method: 'POST',
       headers: {
@@ -32,7 +31,7 @@ export default class CityForm extends React.Component {
        'Content-Type': 'application/json'
      },
       body: ("json", JSON.stringify( city )),
-    }).then(data => alert("Sucess"))
+    }).then(data => alert("Sucess")).then(this.props.callback())
     .catch(error => console.error(error));
 
 }

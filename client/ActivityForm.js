@@ -25,7 +25,6 @@ export default class ActivityForm extends React.Component {
             pictures: this.state.pictures,
             description: data.get('description')
         }
-        console.log(activity);
         fetch('/api/activities', {
             method: 'POST',
             headers: {
@@ -33,7 +32,7 @@ export default class ActivityForm extends React.Component {
                 'Content-Type': 'application/json'
             },
             body: ("json", JSON.stringify(activity)),
-        }).then(data => alert("Sucess"))
+        }).then(data => alert("Sucess")).then(this.props.callback())
             .catch(error => console.error(error));
 
     }
@@ -44,7 +43,7 @@ export default class ActivityForm extends React.Component {
                 <h2>Fill the form to add your activity !</h2>
                 <div className='osef'>
                 <label htmlFor="name">Activity name</label><br/>
-                
+
                 <input id="name" name="name" type="text"/><br/>
                 <label htmlFor="description">Describe the event here :</label><br/>
                 <textarea id="description" name="description"/><br/>

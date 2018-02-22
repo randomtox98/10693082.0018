@@ -51,7 +51,7 @@ export default class Home extends React.Component {
         this.state = {
             cities: []
         }
-
+        this.loadData = this.loadData.bind(this);
     };
 
 
@@ -96,7 +96,7 @@ export default class Home extends React.Component {
                 <div className="allcities">
                     {tab}
                 </div>
-                <CityForm/>
+                <CityForm callback={this.loadData} />
             </div>
         );
     }
