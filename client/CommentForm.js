@@ -12,7 +12,7 @@ export default class CommentForm extends React.Component {
     event.preventDefault();
     const data = new FormData(event.target);
     const comment = {
-      email: 'julien@kappa.com',
+      email: data.get('email'),
       userId: '5a8ab436726aea287ca8280b',
       text:data.get('text'),
       type: this.props.type,
@@ -33,6 +33,8 @@ export default class CommentForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+      <label htmlFor="long">Longitude</label>
+      <input id="email" name="email" type="email" />
         <textarea id="text" name="text" />
         <button>Share</button>
       </form>
