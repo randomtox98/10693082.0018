@@ -613,28 +613,6 @@ var roch = {
     }]
 };
 
-var erlan = {
-    _id: ObjectId(),
-    name: 'Erlangen',
-    coordinates: {
-        long: "11.0119611",
-        lat: " 49.5896744"
-    },
-    description: "Erlangen is a city in Bavaria, Germany dominated by the University of Erlangen-Nuremburg with its student population taking up over a third of the cities population. Once the historical Kingdom of Bavaria submitted to Prussia, the Prussians turned the small university into a Prussian State University.",
-    picture: '/images/Erlangen/erlangen.jpg',
-    activities: [{
-        _id: berg._id,
-        name: berg.name,
-        nature: berg.nature,
-        picture: berg.pictures[0]
-    },  {
-        _id: haus._id,
-        name: haus.name,
-        nature: haus.nature,
-        picture: haus.pictures[0]
-    }]
-};
-
 db.cities.drop();
-db.cities.insert([rennes, cork, poznan, roch, erlan]);
+db.cities.insert([rennes, cork, poznan, roch]);
 
